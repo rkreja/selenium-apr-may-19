@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Login Test Suite">
+  <test name="all login tests">
+    <classes>
+      <class name="com.automationpractice.login.LoginTests">
+      		<methods>
+      		<exclude name="login_001_login_with_valid_userid"></exclude>
+      		</methods>		
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
