@@ -89,7 +89,7 @@ private WebDriver driver;
 		
 		driver.switchTo().frame(frame);
 		
-		//after clicming this button a new window popsup
+		//after clicking this button a new window popsup
 		driver.findElement(By.xpath("//button[child::i[@class='icon-facebook']]")).click();
 		
 		//here we are collecting window handles for old and new windows

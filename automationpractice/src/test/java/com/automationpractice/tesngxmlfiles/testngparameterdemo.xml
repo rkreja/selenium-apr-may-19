@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+<test name="testind numbers in parameters">
+<parameter name="myNum" value="98989"></parameter>
+
+
+
+<classes>
+<class name="com.qa.automationpractice.TestNGParameterDemo">
+<methods>
+<include name="differentDataTypeFromParameter"></include>
+</methods>
+</class>
+</classes>
+
+</test>
+
+
+<!--   <test name="login with gmail users">  
+	<parameter name="userid" value="xyz@gmail.com"></parameter>
+	<parameter name="password" value="gmail"></parameter>
+	
+		
+	<classes>
+	<class name="com.qa.automationpractice.TestNGParameterDemo">
+	<methods>
+	
+	<include name="login"></include>
+	</methods>
+	</class>
+	</classes>
+   </test> Test
+   
+   
+   <test name="login with yahoo users">
+	<parameter name="userid" value="abc@yahoo.com"></parameter>
+	<parameter name="password" value="98954"></parameter>	
+	<classes>
+	<class name="com.qa.automationpractice.TestNGParameterDemo">
+	<methods>
+	
+	<include name="login"></include>
+	</methods>
+	</class>
+	</classes>
+   </test> Test -->
+  
+</suite> <!-- Suite -->
