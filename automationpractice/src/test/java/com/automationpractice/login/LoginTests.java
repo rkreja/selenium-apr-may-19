@@ -1,34 +1,21 @@
 package com.automationpractice.login;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTests {
-	private ChromeDriver driver;
-	
-	@BeforeMethod
-	public void launchWebDriver() {
-		System.setProperty("webdriver.chrome.driver", "lib\\chromedriver.exe");
-		driver = new ChromeDriver();
-	}
-	
-	@AfterMethod
-	public void closeDriver() {
-		driver.close();
-	}
+import com.automationpractice.framework.TestBase;
+
+public class LoginTests extends TestBase{
+
 	
 	@Test
 	public void login_001_login_with_valid_userid() {
 		
 
 		driver.get("http://www.automationpractice.com");
-		//
-		//
-		//
+
 	}
 	@Test
 	public void login_002_login_with_valid_userid_but_invalid_password() {
@@ -40,20 +27,20 @@ public class LoginTests {
 
 		driver.get("http://www.automationpractice.com");
 		// sign in click
-		WebElement sign_in_button = driver.findElementByClassName("login");
+		WebElement sign_in_button = driver.findElement(By.className("login"));
 		sign_in_button.click();
 		// enter email address
-		WebElement email_address_textbox = driver.findElementById("email");
+		WebElement email_address_textbox = driver.findElement(By.id("email"));
 		email_address_textbox.sendKeys("abc213@mailinator.com");
 		// enter password
-		WebElement password_textbox = driver.findElementById("passwd");
+		WebElement password_textbox = driver.findElement(By.id("passwd"));
 		password_textbox.sendKeys("abc1234");
 
-		WebElement login_button = driver.findElementById("SubmitLogin");
+		WebElement login_button = driver.findElement(By.id("SubmitLogin"));
 		login_button.click();
 
 //		Verify 'MY ACCOUNT' text displayed
-		String m = driver.findElementByXPath("//h1[text()='My account']").getText();
+		String m = driver.findElement(By.xpath("//h1[text()='My account']")).getText();
 		System.out.println("**************" + m + "**************");
 		Assert.assertEquals(m, "MY ACCOUNT");
 
