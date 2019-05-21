@@ -1,0 +1,7 @@
+{
+  "name": "internetexplorerdriver",
+  "platform": "windows",
+  "bit": "64",
+  "version": "3.141.59",
+  "url": "http://selenium-release.storage.googleapis.com/3.141/IEDriverServer_x64_3.141.59.zip"
+}

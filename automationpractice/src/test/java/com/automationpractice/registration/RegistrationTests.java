@@ -13,7 +13,7 @@ public class RegistrationTests extends TestBase{
 		try {
 			ui.openURL("http://automationpractice.com/index.php?");
 			ui.clickByClassName("login");
-			ui.sendKeysById("email_create", "abc9988@mailinator.com");
+			ui.sendKeysById("email_create", "abc998832@mailinator.com");
 			ui.clickById("SubmitCreate");
 			ui.sendKeysById("customer_firstname", "Ahmed");
 			ui.sendKeysById("customer_lastname", "Mamun");
@@ -25,7 +25,7 @@ public class RegistrationTests extends TestBase{
 			ui.sendKeysById("postcode", "10001");
 			ui.sendKeysById("phone", "2052051144");
 			ui.sendKeysById("phone_mobile", "2052051144");
-			ui.clickById("submitAccount");
+			//ui.clickById("submitAccount");
 			//
 			
 		} finally {

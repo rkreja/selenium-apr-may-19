@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression test suite" parallel="tests" thread-count="4">
+
+	<test name="login tests">
+		<classes>
+			<class
+				name="com.qa.automationpractice.parallel.login.LoginTests" />
+		</classes>
+	</test>
+
+	<test name="registration tests">
+		<classes>
+			<class
+				name="com.qa.automationpractice.parallel.reg.RegistrationTests" />
+		</classes>
+	</test>
+
+	<test name="product tests">
+		<classes>
+			<class
+				name="com.qa.automationpractice.parallel.product.ProductTests" />
+		</classes>
+	</test>
+
+	<test name="purchase tests">
+		<classes>
+			<class
+				name="com.qa.automationpractice.parallel.purchase.PurchaseTests" />
+		</classes>
+	</test>
+
+	<test name="search tests">
+		<classes>
+			<class
+				name="com.qa.automationpractice.parallel.search.SearchTests" />
+		</classes>
+	</test>
+</suite>

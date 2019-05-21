@@ -1,6 +1,7 @@
 package com.automationpractice.framework;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -50,6 +51,10 @@ public class UI {
 		default:
 			throw new RuntimeException("You have select invalid locator");
 		}
+		
+		//highlight element
+		((JavascriptExecutor)driver).executeScript("arguments[0].style.border='3px solid red'", elementThatFound);
+		
 		return elementThatFound;
 	}
 	
@@ -67,10 +72,13 @@ public class UI {
 	public void clickByClassName(String className) {
 //		driver.findElement(By.className(className)).click();
 		findElement(LOCAOTR_CLASS, className).click();
+	
 	}
 	//click by xpath
 	public void clickByXpath(String xpath) {
-		driver.findElement(By.xpath(xpath)).click();
+		
+//		driver.findElement(By.xpath(xpath)).click();
+		findElement(LOCAOTR_XPATH, xpath).click();
 	}
 	//
 	//
@@ -80,15 +88,18 @@ public class UI {
 	//SENDKEYS
 	//sendkeys by id
 	public void sendKeysById(String id, String text) {
-		driver.findElement(By.id(id)).sendKeys(text);
+//		driver.findElement(By.id(id)).sendKeys(text);
+		findElement(LOCAOTR_ID, id).sendKeys(text);
 	}
 	//sendkeys by class name
 	public void sendKeysByClass(String className, String text) {
-		driver.findElement(By.className(className)).sendKeys(text);
+//		driver.findElement(By.className(className)).sendKeys(text);
+		findElement(LOCAOTR_CLASS, className).sendKeys(text);
 	}
 	//sendkeys by xpath
 	public void sendKeysByXpath(String xpath, String text) {
-		driver.findElement(By.xpath(xpath)).sendKeys(text);
+//		driver.findElement(By.xpath(xpath)).sendKeys(text);
+		findElement(LOCAOTR_XPATH, xpath).sendKeys(text);
 	}
 	//
 	//
