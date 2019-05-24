@@ -15,6 +15,9 @@ public class RegistrationTests extends TestBase{
 			ui.clickByClassName("login");
 			ui.sendKeysById("email_create", "abc998832@mailinator.com");
 			ui.clickById("SubmitCreate");
+			
+//			ui.clickById("dsfdfdf");
+			
 			ui.sendKeysById("customer_firstname", "Ahmed");
 			ui.sendKeysById("customer_lastname", "Mamun");
 			ui.sendKeysById("passwd", "Abc1234");
