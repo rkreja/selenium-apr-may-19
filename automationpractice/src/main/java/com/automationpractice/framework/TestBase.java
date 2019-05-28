@@ -1,10 +1,14 @@
 package com.automationpractice.framework;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -245,7 +249,16 @@ public class TestBase implements WebDriverEventListener, ITestListener{
 
 	@Override
 	public void onException(Throwable throwable, WebDriver driver) {
-		// TODO Auto-generated method stub
+		
+		File screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String filename="error_"+ System.currentTimeMillis();
+		try {
+			FileUtils.copyFile(screenshot, new File("screenshots\\"+filename+".png"));
+			step.addScreenCaptureFromPath("screenshots\\"+filename+".png");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 
@@ -286,7 +299,9 @@ public class TestBase implements WebDriverEventListener, ITestListener{
 	}
 	@Override
 	public void onTestFailure(ITestResult result) {
+		
 		step.fail("test failed. Reason:\n"+result.getThrowable().getMessage());
+		
 		
 	}
 	@Override

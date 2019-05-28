@@ -16,7 +16,7 @@ public class RegistrationTests extends TestBase{
 			ui.sendKeysById("email_create", "abc998832@mailinator.com");
 			ui.clickById("SubmitCreate");
 			
-//			ui.clickById("dsfdfdf");
+			ui.clickById("dsfdfdf");
 			
 			ui.sendKeysById("customer_firstname", "Ahmed");
 			ui.sendKeysById("customer_lastname", "Mamun");
@@ -30,6 +30,8 @@ public class RegistrationTests extends TestBase{
 			ui.sendKeysById("phone_mobile", "2052051144");
 			//ui.clickById("submitAccount");
 			//
+			
+//			Assert.assertEquals("a", "a");
 			
 		} finally {
 			//gotoprofile
